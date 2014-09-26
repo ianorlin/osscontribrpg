@@ -1,6 +1,6 @@
 #include<iostream>
 /*Copyright 2014 Brendan Perrine This code is realsed on the gpl v2 
-
+It is a simple gmae where you play as an open source contributor and try not to be crazy in which case you lose. or get to the victory level in which case you win 
 */
 
 #include<cstdlib>
@@ -11,6 +11,7 @@ using namespace std;
 class Player{
 public:
 Player();
+Player( unsigned int s_irc_level, unsigned int s_documentation_level, unsigned int s_QA_level, unsigned int s_dev_level,unsigned int s_stress_level,  unsigned int s_stress_tolerance, unsigned int s_vict_level);
 //contrib choice
 void contrib_irc();
 void contrib_documentation();
@@ -235,4 +236,20 @@ cout<<"You become a great dev helping write the open source software that so man
 }
 unsigned int Player::get_vict_level(){
 return vict_level;
+}
+/**
+constructor with paramaters for player 
+s_*_level is the starting level for each part of a player object.
+Copy things starting with s into the value for Player class without starting with s
+s is short for start 
+*/
+Player::Player( unsigned int s_irc_level, unsigned int s_documentation_level, unsigned int s_QA_level, unsigned int s_dev_level, unsigned int s_stress_level, unsigned int s_stress_tolerance,  unsigned int s_vict_level){
+irc_level=s_irc_level;
+documentation_level=s_documentation_level;
+QA_level=s_QA_level;
+dev_level=s_dev_level;
+stress_level=s_stress_level;
+stress_tolerance=s_stress_tolerance;
+vict_level=s_vict_level;
+
 }
