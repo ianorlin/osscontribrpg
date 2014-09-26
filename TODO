@@ -1,0 +1,4 @@
+1. Add custom game mode where you can choose what level you declare victory and stress tolerence. 
+ a. get user input for this custom game. 
+ b. allow user to chose default game which uses default constructor or custom game which uses constructor with paramaters.
+2? Add multiplayer mode where it alternates between players. 
