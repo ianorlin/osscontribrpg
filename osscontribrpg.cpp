@@ -44,11 +44,13 @@ unsigned int vict_level;
 };
 void console_input_contribution(Player & conplay);
 void console_input_vict_printer(Player victor);
+bool console_choose_custom_game();
 
 int main(){
 srand(time(0));
 //cout<<rand() %20<<endl;
 Player console_user=Player();
+//think about about refactoring into a function for custom game tonot duplicate code.  
 do{
 console_input_contribution(console_user);
 //console_user.chance_stress();
@@ -253,3 +255,19 @@ stress_tolerance=s_stress_tolerance;
 vict_level=s_vict_level;
 
 }
+
+/** This function gets input from player asking if they want a custom game
+
+*/
+bool console_choose_custom_game(){
+char cust_accept='y';
+cout<<"Enter "<<cust_accept<<" if you want to play a custom game"<<endl;
+char cust_input;
+cin>>cust_input;
+if (cust_input==cust_accept){
+return true;
+}
+else{
+return false;
+}
+} 
