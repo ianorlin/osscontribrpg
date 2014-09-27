@@ -1,6 +1,20 @@
 #include<iostream>
 /*Copyright 2014 Brendan Perrine This code is realsed on the gpl v2 
 It is a simple gmae where you play as an open source contributor and try not to be crazy in which case you lose. or get to the victory level in which case you win 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
 */
 
 #include<cstdlib>
@@ -45,6 +59,7 @@ unsigned int vict_level;
 void console_input_contribution(Player & conplay);
 void console_input_vict_printer(Player victor);
 bool console_choose_custom_game();
+Player custom_char_builder();
 
 int main(){
 srand(time(0));
@@ -270,4 +285,34 @@ return true;
 else{
 return false;
 }
+}
+Player custom_char_builder(){ 
+//get contrib levels
+cout<<"Insery your irc level"<<endl;
+unsigned int cust_irc_level;
+cin>>cust_irc_level;
+cout<<"Insert your Documentation elvel"<<endl;
+usnigned int cust_documentation_level;
+cin>>cust_documentation_level;
+unsigned int cust_QA_level;
+cout<<"INsery your QA level"<<endl;
+cin>>cust_QA_level;
+unsigned int cust_dev_level;
+cout<<Insert your dev level<<endl;
+cin>>cust_dev_level;
+//stress
+cout<<"enter your current stress level"<<endl;
+unsigned int cust_stress_level;
+cin>>cust_stress_level;
+cout<<"enter your stress tolerance"<<endl;
+usigned int cust_stress_tolerance;
+cin>> cust_stress_tolerance;
+
+//victory 
+cout<<"Enter the level of one contribution needed to attain victory"<<endl;
+usigned int cust_vict_level;
+cin>>cust_vict_level;
+
+Player cust_char= Player(cust_irc_level, cust_documentation_level, cust_QA_level, cust_dev_level,cust_stress_level, cust_stress_tolerance,cust vict_level); 
+return cust_char;
 } 
