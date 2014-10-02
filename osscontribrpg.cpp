@@ -66,11 +66,16 @@ srand(time(0));
 //cout<<rand() %20<<endl;
 if (console_choose_custom_game())
 {
-
-
-}
-else
+Player custom_console_player= custom_char_builder();
+//check if cheating using .do_i_win() 
+if (custom_console_player.do_i_win())
 {
+    cout<<"You have not even played yet you cheater do not try to win before playing"<<endl;
+}
+//else use do loop to play the game
+}
+else{
+
 Player console_user=Player();
 //think about about refactoring into a function for custom game tonot duplicate code.  
 do{
