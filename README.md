@@ -9,4 +9,6 @@ Information on playing the game. RIght now it is only turn based and takes input
 
 Note that you can still level up and gain stress the chance of the two is statisicaly independent if you chose to contribute and resting is the only way to reduce stress. If you reach the level where you win and go crazy in a round of the game  you still are crazy. You cannot rest and gain stress however. 
  
-For the default game you want to reach level 10 in a contribution without getting to 6 stress. There currently is not a time limit althuogh this could be a future feature. 
+For the default game you want to reach level 10 in a contribution without getting to 6 stress. There currently is not a time limit althuogh this could be a future feature.
+
+Note please do not cheat in custom games and have it so you immediately win before first turn.  

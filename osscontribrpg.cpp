@@ -64,6 +64,13 @@ Player custom_char_builder();
 int main(){
 srand(time(0));
 //cout<<rand() %20<<endl;
+if (console_choose_custom_game())
+{
+
+
+}
+else
+{
 Player console_user=Player();
 //think about about refactoring into a function for custom game tonot duplicate code.  
 do{
@@ -83,6 +90,7 @@ cout<<"console user is over stressed and loses his or her sanity. "<<endl;
 }
 else {
 console_input_vict_printer (console_user);
+}
 }
 return 0;
 }
@@ -288,31 +296,32 @@ return false;
 }
 Player custom_char_builder(){ 
 //get contrib levels
-cout<<"Insery your irc level"<<endl;
+cout<<"Insert your irc level"<<endl;
 unsigned int cust_irc_level;
 cin>>cust_irc_level;
 cout<<"Insert your Documentation elvel"<<endl;
-usnigned int cust_documentation_level;
+unsigned int cust_documentation_level;
 cin>>cust_documentation_level;
 unsigned int cust_QA_level;
-cout<<"INsery your QA level"<<endl;
+cout<<"Insert your QA level"<<endl;
 cin>>cust_QA_level;
 unsigned int cust_dev_level;
-cout<<Insert your dev level<<endl;
+cout<<"Insert your dev level"<<endl;
 cin>>cust_dev_level;
 //stress
 cout<<"enter your current stress level"<<endl;
 unsigned int cust_stress_level;
 cin>>cust_stress_level;
 cout<<"enter your stress tolerance"<<endl;
-usigned int cust_stress_tolerance;
+unsigned int cust_stress_tolerance;
 cin>> cust_stress_tolerance;
 
 //victory 
 cout<<"Enter the level of one contribution needed to attain victory"<<endl;
-usigned int cust_vict_level;
+unsigned int cust_vict_level;
 cin>>cust_vict_level;
 
-Player cust_char= Player(cust_irc_level, cust_documentation_level, cust_QA_level, cust_dev_level,cust_stress_level, cust_stress_tolerance,cust vict_level); 
+Player cust_char= Player(cust_irc_level, cust_documentation_level, cust_QA_level, cust_dev_level,cust_stress_level, cust_stress_tolerance,cust_vict_level); 
+
 return cust_char;
 } 
