@@ -60,7 +60,7 @@ void console_input_contribution(Player & conplay);
 void console_input_vict_printer(Player victor);
 bool console_choose_custom_game();
 Player custom_char_builder();
-
+void Turn ( Player& cur_player );
 int main(){
 srand(time(0));
 //cout<<rand() %20<<endl;
@@ -73,22 +73,35 @@ if (custom_console_player.do_i_win())
     cout<<"You have not even played yet you cheater do not try to win before playing"<<endl;
 }
 //else use do loop to play the game
+else {
+Turn( custom_console_player);
+if (custom_console_player.is_overstressed())
+  { 
+cout<<"Your custom character loses his/her sanity and descends into madness"<<endl;
+
+  }
+else { 
+  console_input_vict_printer( custom_console_player);
+   }
+  }
 }
 else{
 
 Player console_user=Player();
 //think about about refactoring into a function for custom game tonot duplicate code.  
-do{
+/*do{
+
 console_input_contribution(console_user);
 //console_user.chance_stress();
 cout<<"irc_level "<<console_user.get_irc_level()<<"documentation_level "<<console_user.get_QA_level()<<"QA level "<< console_user.get_dev_level()<<"dev level"<<console_user.get_dev_level()<<"Stress level "<<console_user.get_stress_level()<<endl;
 }while (!console_user.is_overstressed()&&!console_user.do_i_win());
+*/
 //need to add victory conditions 
 //call contrib in area 
 //check if game is over
 //repeat
 //loss message 
-
+Turn (console_user);
 if (console_user.is_overstressed() )
 {
 cout<<"console user is over stressed and loses his or her sanity. "<<endl;
@@ -252,13 +265,13 @@ void console_input_vict_printer(Player victorous_player
 ){
 if (victorous_player.get_irc_level()>=victorous_player.get_vict_level())
 {
-cout<<"You become an irc operating and great helper making the users of $distro well supported and helped."<<endl;
+cout<<"You become an irc operator and great helper making the users of $distro well supported and helped. You also prevent spammers and trolls from wrecking the expirence for everyone."<<endl;
 }
 else if (victorous_player.get_documentation_level()>=victorous_player.get_vict_level()){
-cout<<"You become a great contributor to documentation helping people online understand even through many thankless hours and espicailly helful to other trying to help on irc."<<endl;
+cout<<"You become a great contributor to documentation helping people online understand even through many thankless hours and espicailly helful to other trying to help on irc from links to your work."<<endl;
 }
 else if (victorous_player.get_QA_level()>=victorous_player.get_vict_level()){
-cout<<"You become a great QA engineer finding bugs and even fixing them in development relase and making users lives much better."<<endl;
+cout<<"You become a great QA engineer finding bugs and even fixing them in development relase and making users lives much better. You even prevent a bug that would be a major issue like many people being unable to connect to wifi."<<endl;
 }
 else {
 cout<<"You become a great dev helping write the open source software that so many depend on"<<endl;
@@ -329,4 +342,16 @@ cin>>cust_vict_level;
 Player cust_char= Player(cust_irc_level, cust_documentation_level, cust_QA_level, cust_dev_level,cust_stress_level, cust_stress_tolerance,cust_vict_level); 
 
 return cust_char;
+} 
+/**
+Iterate a turn on the console passes cur_player by reference and gets input and shows the status of player. 
+modified from loop in main to allow not duplicated code for 
+*/
+void Turn ( Player & cur_player){
+do{
+console_input_contribution(cur_player);
+//console_user.chance_stress();
+cout<<"irc_level "<<cur_player.get_irc_level()<<"documentation_level "<<cur_player.get_QA_level()<<"QA level "<< cur_player.get_dev_level()<<"dev level"<<cur_player.get_dev_level()<<"Stress level "<<cur_player.get_stress_level()<<endl;
+}while (!cur_player.is_overstressed()&&!cur_player.do_i_win());
+
 } 
