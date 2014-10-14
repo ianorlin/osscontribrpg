@@ -88,20 +88,10 @@ else {
 else{
 
 Player console_user=Player();
-//think about about refactoring into a function for custom game tonot duplicate code.  
-/*do{
 
-console_input_contribution(console_user);
-//console_user.chance_stress();
-cout<<"irc_level "<<console_user.get_irc_level()<<"documentation_level "<<console_user.get_QA_level()<<"QA level "<< console_user.get_dev_level()<<"dev level"<<console_user.get_dev_level()<<"Stress level "<<console_user.get_stress_level()<<endl;
-}while (!console_user.is_overstressed()&&!console_user.do_i_win());
-*/
-//need to add victory conditions 
 //call contrib in area 
-//check if game is over
-//repeat
-//loss message 
 Turn (console_user);
+//end game conidtions of win or lose. 
 if (console_user.is_overstressed() )
 {
 cout<<"console user is over stressed and loses his or her sanity. "<<endl;
