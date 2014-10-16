@@ -288,7 +288,7 @@ vict_level=s_vict_level;
 }
 
 /** This function gets input from player asking if they want a custom game
-
+It returns true if the player enters y for a custom game and false if any other input.
 */
 bool console_choose_custom_game(){
 char cust_accept='y';
