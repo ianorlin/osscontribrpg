@@ -67,17 +67,20 @@ srand(time(0));
 if (console_choose_custom_game())
 {
 Player custom_console_player= custom_char_builder();
-//check if cheating using .do_i_win() 
+//check if cheating using .do_i_win() or if you are starting out crazy and print message
 if (custom_console_player.do_i_win())
 {
-    cout<<"You have not even played yet you cheater do not try to win before playing"<<endl;
+    cout<<"You have not even played yet you cheater do not try to win before playingi."<<endl;
+}
+else if (custom_console_player.is_overstressed()){
+cout<<"You are already crazy you should care for your mental health and take care of yourself and not try to become some sort of martyr for free software and not taking care of yourself."<<endl;
 }
 //else use do loop to play the game
 else {
 Turn( custom_console_player);
 if (custom_console_player.is_overstressed())
   { 
-cout<<"Your custom character loses his/her sanity and descends into madness"<<endl;
+cout<<"Your custom character loses his/her sanity and descends into madnessi."<<endl;
 
   }
 else { 
