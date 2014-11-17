@@ -1,8 +1,12 @@
 1. Add custom game mode where you can choose what level you declare victory and stress tolerence. 
-     a. get user input for this custom game. 
-     b. allow user to chose default game which uses default constructor or custom game which uses constructor with paramaters
-.     i. have function that allows user to implement custom game returning a bool. 
-2? Add multiplayer mode where it alternates between players.
+     a. get user input for this custom game. Done and is working 
+     b. allow user to chose default game which uses default constructor or custom game which uses constructor with paramaters Done consturctor implemented 
+.     i. have function that allows user to implement custom game returning a bool. Not a function but just a branch in main for choosing custom game and then use turn for the single player.
+c. maybe allow users to enter their name if they want to using a named player class. This wouldn't make much sense for defualt game though.  
+2 Add multiplayer mode where it alternates between players.
 a. to do this having names for the players would be nice maybe use inheritance with Player as the base class.
-b.  if multiplayer and custom game are both possible modes than the custom things should be same for each player otherwise is very unbalanced. 
+b.  if multiplayer and custom game are both possible modes than the custom things should be same for each player otherwise is very unbalanced. want defualt game multiplayer first so later. 
+c. I want multiplayer to be player one decides  on contribution then Player 2 Then a Player 3 if there is one can do it.
+d. Implement all the different players as lists and use iterators to move to next player for each turn. 
+e. 
 
