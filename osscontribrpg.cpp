@@ -19,6 +19,8 @@ It is a simple gmae where you play as an open source contributor and try not to 
 
 #include<cstdlib>
 #include<cmath>
+#include<list>
+#include<string>
  
 using namespace std;
 
@@ -56,12 +58,22 @@ unsigned int stress_tolerance;
 unsigned int vict_level;
 
 };
+
+class Named_Player: public Player{
+public:
+Named_Player();
+Named_Player( string ins_Name);
+string get_name();
+
+private:
+string name;
+
+};
 void console_input_contribution(Player & conplay);
 void console_input_vict_printer(Player victor);
 Player custom_char_builder();
 void Turn ( Player& cur_player );
 bool console_choose_custom_game();
-bool console_multiplayer_game();
 int main(){
 srand(time(0));
 //cout<<rand() %20<<endl;
@@ -366,4 +378,16 @@ else
 {
 return false;
 }
+}
+
+/**Default constructor for named player
+sets default name to Player
+*/
+Named_Player::Named_Player() :Player() 
+{
+name="Player";
+}
+
+Named_Player::Named_Player(string ins_name) :Player(){
+name=ins_name;
 }
