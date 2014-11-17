@@ -58,9 +58,10 @@ unsigned int vict_level;
 };
 void console_input_contribution(Player & conplay);
 void console_input_vict_printer(Player victor);
-bool console_choose_custom_game();
 Player custom_char_builder();
 void Turn ( Player& cur_player );
+bool console_choose_custom_game();
+bool console_multiplayer_game();
 int main(){
 srand(time(0));
 //cout<<rand() %20<<endl;
@@ -75,7 +76,7 @@ if (custom_console_player.do_i_win())
 else if (custom_console_player.is_overstressed()){
 cout<<"You are already crazy you should care for your mental health and take care of yourself and not try to become some sort of martyr for free software and not taking care of yourself."<<endl;
 }
-//else use do loop to play the game
+//else use do loop to go trhough the custom game 
 else {
 Turn( custom_console_player);
 if (custom_console_player.is_overstressed())
@@ -92,7 +93,6 @@ else{
 
 Player console_user=Player();
 
-//call contrib in area 
 Turn (console_user);
 //end game conidtions of win or lose. 
 if (console_user.is_overstressed() )
@@ -338,7 +338,8 @@ return cust_char;
 } 
 /**
 Iterate a turn on the console passes cur_player by reference and gets input and shows the status of player. 
-modified from loop in main to allow not duplicated code for 
+modified from loop in main to allow not duplicated code for custom game or defualt game if not playing a custom one. 
+Does not work for multiplayer as is needed to take turns for each player in sequentially.  
 */
 void Turn ( Player & cur_player){
 do{
@@ -347,4 +348,22 @@ console_input_contribution(cur_player);
 cout<<"irc_level "<<cur_player.get_irc_level()<<"documentation_level "<<cur_player.get_QA_level()<<"QA level "<< cur_player.get_dev_level()<<"dev level"<<cur_player.get_dev_level()<<"Stress level "<<cur_player.get_stress_level()<<endl;
 }while (!cur_player.is_overstressed()&&!cur_player.do_i_win());
 
-} 
+}
+
+/**This function asks whether or not you want to make a multiplayer console game. 
+Returns true if multiplayer game and false otherwise. 
+
+*/
+bool console_multiplayer_game(){
+char multiplayer_accept='y';
+char multiplayer_input;
+cin>>multiplayer_input;
+if (multiplayer_input=='y')
+{
+return true;
+}
+else 
+{
+return false;
+}
+}
